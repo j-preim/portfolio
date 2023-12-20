@@ -60,7 +60,7 @@ figure {
 main {
   display: flex;
   flex-direction: column;
-  margin: 2% 12%;
+  margin: 2% 10%;
 }
 
 main header {
@@ -183,9 +183,14 @@ main section {
   margin: 10px;
 }
 
-.contact a {
+#contact a {
   text-decoration: none;
   color: var(--splash);
+}
+
+#resume p {
+  font-size: 300%;
+  padding: 20px;
 }
 
 @media screen and (max-width: 768px) {
