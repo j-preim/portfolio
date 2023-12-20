@@ -27,13 +27,13 @@ h1 {
   font-size: 200%;
   font-weight: bold;
   color: var(--header);
-  min-width: 320px;
+  width: 60%;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-between;
-  min-width: 400px;
+  justify-content: space-around;
+  width: 50%;
   font-size: 100%;
   font-weight: bold;
 }
@@ -52,15 +52,15 @@ nav a:hover {
 
 figure {
   height: 300px;
-  width: 100%;
   background-image: url("../images/circuit-board.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 main {
-  max-width: 96%;
-  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  margin: 2% 12%;
 }
 
 main header {
@@ -70,81 +70,117 @@ main header {
   color: var(--header);
   width: 100%;
   background-color: var(--primary);
-  border-left: 3px solid var(--secondary);
-  
+  border-left: 5px solid var(--secondary);
 }
 
 main section {
   border: 3px dashed var(--primary);
   margin: 10px 0px 20px 0px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .about {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 120%;
 }
 
 .about img {
   width: 25%;
   max-width: 250px;
   margin-right: 20px;
+  height: fit-content;
 }
 
 .work-first {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .work-first img {
-  width: 80%;
-  align-items: center;
-  justify-content: center;
-  max-width: 1000px;
+  width: 100%;
 }
 
 .work-first p {
-  display: none;
-  background-color: var(--splash);
-  padding: 20px;
+  position: absolute;
+  bottom: 20%;
+  font-size: 250%;
+  color: white;
+  background-color: var(--primary);
+  padding: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: var(--splash);
+  border-left: none;
+  flex-shrink: 5;
 }
 
 .work-first img:hover {
-  outline: auto 30px var(--splash);
+  outline: solid 10px var(--splash);
 }
 
 .work-rest {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.work-rest a {
+  display: flex;
+  justify-content: space-around;
+  width: 49.5%;
+  margin: 0.5% 0;
 }
 
 .work-rest img {
-  width: 40%;
-  padding-left: 10px;
-  padding-top: 20px;
-  margin-right: 10px;
-  max-width: 500px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
 }
 
-.contact {
+.work-rest img:hover {
+  outline: solid 10px var(--splash);
+}
+
+.work-rest p {
+  position: absolute;
+  font-size: 200%;
+  color: white;
+  background-color: var(--primary);
+  padding: 15px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: var(--splash);
+  border-left: none;
+}
+
+#project1 {
+  top: 28%;
+}
+
+#project2 {
+  top: 28%;
+  left: 50.5%;
+}
+
+#project3 {
+  bottom: 12%;
+  left: 0%;
+}
+
+#project4 {
+  bottom: 12%;
+  left: 50.5%;
+}
+
+.contact ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.contact img {
-  width: 25%;
-  max-width: 300px;
-  margin-right: 20px;
-}
-
-.contact p {
-  padding-right: 30px;
+  justify-content: space-between;
+  font-size: 120%;
+  margin: 10px;
 }
 
 .contact a {
@@ -154,17 +190,119 @@ main section {
 
 @media screen and (max-width: 768px) {
   nav {
-    display: inline-block;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--primary);
+  border-bottom: 8px double var(--secondary);
+  }
+  nav h1{
+    font-size: 180%;
   }
   nav ul {
-    padding-top: 15px;
     float: left;
-    font-size: 90%;
+    font-size: 96%;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
   }
   figure {
     height: 200px;
+  }
+  main {
+    margin: 2% 6%;
+  }
+  .work-first p {
+    font-size: 200%;
+    padding: 10px;
+  }
+  .work-rest p {
+    font-size: 150%;
+    padding: 10px;
+  }
+}
+  
+  @media screen and (max-width: 600px) {
+    nav {
+    display: inline-block;
+    padding: 10px 15px;
+    width: 100%;
+    }
+    nav h1{
+      font-size: 180%;
+      width: 100%;
+    }
+    nav ul {
+      padding-top: 10px;
+      float: left;
+      font-size: 90%;
+      width: 60%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    figure {
+      height: 200px;
+    }
+    main {
+      margin: 2% 5%;
+    }
+    main header {
+      padding: 10px;
+      font-size: 100%;
+    }
+    .about {
+      font-size: 100%;
+    }
+    .contact ul {
+      font-size: 100%;
+    }
+    .work-first p {
+      font-size: 200%;
+    }
+    .work-rest p {
+      font-size: 150%;
+    }
+}
+@media screen and (max-width: 425px) {
+  nav {
+  display: inline-block;
+  padding: 10px 15px;
+  width: 100%;
+  }
+  nav h1{
+    font-size: 160%;
+    width: 100%;
+  }
+  nav ul {
+    padding-top: 10px;
+    float: left;
+    font-size: 80%;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  figure {
+    height: 200px;
+  }
+  main {
+    margin: 2% 2%;
+  }
+  main header {
+    padding: 10px;
+    font-size: 90%;
+  }
+  .contact ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+  .work-first p {
+    font-size: 150%;
+    padding: 5px;
+  }
+  .work-rest p {
+    font-size: 100%;
+    padding: 5px;
   }
 }
